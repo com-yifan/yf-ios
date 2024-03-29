@@ -15,7 +15,6 @@
 #pragma 百度广告不支持该回调
 - (void)fcAdSplashOnAdCountdownToZero;
 
-
 #pragma 仅优量汇支持
 /// 广告即将关闭
 - (void)fcAdSplashOnAdWillClose:(id)adapter;

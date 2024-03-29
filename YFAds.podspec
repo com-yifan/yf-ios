@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "YFAds"
-  s.version = "5.3.3.3-bate"
+  s.version = "5.3.3.4-bate"
   s.summary = "iOS YFAdsSDK"
   s.license = {"type"=>"MIT", "file"=>"LICENSE"}
   s.authors = {"yifan"=>"576661787@qq.com"}
@@ -8,13 +8,14 @@ Pod::Spec.new do |s|
   s.description = "YFAds"
   s.requires_arc = true
   s.static_framework = true
+  s.ios.deployment_target    = '11.0'
 
   s.source  = { :git => "https://github.com/com-yifan/yf-ios.git", :tag => "#{s.version}" }
   valid_archs = ['x86_64', 'arm64']
   s.user_target_xcconfig = {'OTHER_LDFLAGS' => ['-ObjC']}
-
-  s.pod_target_xcconfig = {'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64 arm64' }
-  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64 arm64' }
+  s.pod_target_xcconfig = { 'ONLY_ACTIVE_ARCH' => 'YES' }
+  s.pod_target_xcconfig = {'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64' }
   # s.pod_target_xcconfig = { 'ENABLE_BITCODE' => 'NO'}
   # s.user_target_xcconfig = { 'ENABLE_BITCODE' => 'NO'}
 
@@ -42,9 +43,14 @@ Pod::Spec.new do |s|
   # end
 
   # s.subspec 'YFAdsGDTAdapter' do |ss|
-  #   ss.dependency 'GDTMobSDK','4.14.63'
-  #   ss.dependency 'YFAds/YFAdsSDK'
+  #   ss.ios.deployment_target    = '11.0'
+  #   ss.pod_target_xcconfig = {'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  #   ss.user_target_xcconfig = {'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+  #   ss.dependency 'GDTMobSDK','4.14.32'
+  #   ss.dependency 'YFAdsSDK', '5.3.2.37'
   #   ss.vendored_frameworks = 'SDK/YFAdsGDTAdapter.framework'
+  #   ss.resource = 'SDK/YFAdsSDK.bundle'
+
   # end
 
   s.subspec 'YFAdsKSAdapter' do |ss|
@@ -64,7 +70,6 @@ Pod::Spec.new do |s|
 
 
  
-  s.ios.deployment_target    = '11.0'
   # s.ios.vendored_framework   = 'SDK/YFAdsSDK.framework'
   s.xcconfig = {
       'VALID_ARCHS' =>  valid_archs.join(' '),
