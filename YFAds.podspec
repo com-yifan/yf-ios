@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "YFAds"
-  s.version = "5.3.3.8-bate"
+  s.version = "5.3.3.10-bate"
   s.summary = "iOS YFAdsSDK"
   s.license = {"type"=>"MIT", "file"=>"LICENSE"}
   s.authors = {"yifan"=>"576661787@qq.com"}
@@ -44,8 +44,6 @@ Pod::Spec.new do |s|
 
   s.subspec 'YFAdsGDTAdapter' do |ss|
     ss.ios.deployment_target    = '11.0'
-    ss.pod_target_xcconfig = {'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-    ss.user_target_xcconfig = {'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
     ss.dependency 'GDTMobSDK','4.14.32'
     ss.dependency 'YFAds/YFAdsSDK'
     ss.vendored_frameworks = 'SDK/YFAdsGDTAdapter.framework'
