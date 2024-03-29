@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = "YFAds"
-  s.version = "5.3.3.4-bate"
+  s.version = "5.3.3.8-bate"
   s.summary = "iOS YFAdsSDK"
   s.license = {"type"=>"MIT", "file"=>"LICENSE"}
   s.authors = {"yifan"=>"576661787@qq.com"}
@@ -42,25 +42,24 @@ Pod::Spec.new do |s|
   #   ss.vendored_frameworks = 'SDK/YFAdsBDAdapter.framework'
   # end
 
-  # s.subspec 'YFAdsGDTAdapter' do |ss|
-  #   ss.ios.deployment_target    = '11.0'
-  #   ss.pod_target_xcconfig = {'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  #   ss.user_target_xcconfig = {'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
-  #   ss.dependency 'GDTMobSDK','4.14.32'
-  #   ss.dependency 'YFAdsSDK', '5.3.2.37'
-  #   ss.vendored_frameworks = 'SDK/YFAdsGDTAdapter.framework'
-  #   ss.resource = 'SDK/YFAdsSDK.bundle'
-
-  # end
-
-  s.subspec 'YFAdsKSAdapter' do |ss|
-    ss.dependency 'KSAdSDK','3.3.61'
+  s.subspec 'YFAdsGDTAdapter' do |ss|
+    ss.ios.deployment_target    = '11.0'
+    ss.pod_target_xcconfig = {'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+    ss.user_target_xcconfig = {'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
+    ss.dependency 'GDTMobSDK','4.14.32'
     ss.dependency 'YFAds/YFAdsSDK'
-    ss.frameworks = ["Foundation", "UIKit", "MobileCoreServices", "CoreGraphics", "Security", "SystemConfiguration", "CoreTelephony", "AdSupport", "CoreData", "StoreKit", "AVFoundation", "MediaPlayer", "CoreMedia", "WebKit", "Accelerate", "CoreLocation", "AVKit", "MessageUI", "QuickLook", "AudioToolBox", "AddressBook"]
-    ss.libraries =  ["z", "resolv.9", "sqlite3", "c++", "c++abi"]
-    ss.vendored_frameworks = 'SDK/YFAdsKSAdapter.framework'
+    ss.vendored_frameworks = 'SDK/YFAdsGDTAdapter.framework'
 
   end
+
+  # s.subspec 'YFAdsKSAdapter' do |ss|
+  #   ss.dependency 'KSAdSDK','3.3.61'
+  #   ss.dependency 'YFAds/YFAdsSDK'
+  #   ss.frameworks = ["Foundation", "UIKit", "MobileCoreServices", "CoreGraphics", "Security", "SystemConfiguration", "CoreTelephony", "AdSupport", "CoreData", "StoreKit", "AVFoundation", "MediaPlayer", "CoreMedia", "WebKit", "Accelerate", "CoreLocation", "AVKit", "MessageUI", "QuickLook", "AudioToolBox", "AddressBook"]
+  #   ss.libraries =  ["z", "resolv.9", "sqlite3", "c++", "c++abi"]
+  #   ss.vendored_frameworks = 'SDK/YFAdsKSAdapter.framework'
+
+  # end
 
   # s.subspec 'YFAdsJDAdapter' do |ss|
   #   ss.dependency 'JADYun'
