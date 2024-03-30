@@ -29,18 +29,18 @@ Pod::Spec.new do |s|
     ss.resource = 'SDK/YFAdsSDK.bundle'
   end
   
-  # s.subspec 'YFAdsCSJAdapter' do |ss|
-  #   ss.dependency 'Ads-CN'
-  #   ss.dependency 'YFAds/YFAdsSDK'
-  #   ss.vendored_frameworks = 'SDK/YFAdsCSJAdapter.framework'
-  # end
+  s.subspec 'YFAdsCSJAdapter' do |ss|
+    ss.dependency 'Ads-CN'
+    ss.dependency 'YFAds/YFAdsSDK'
+    ss.vendored_frameworks = 'SDK/YFAdsCSJAdapter.framework'
+  end
 
   
-  #  s.subspec 'YFAdsBDAdapter' do |ss|
-  #   ss.dependency 'BaiduMobAdSDK','5.332'
-  #   ss.dependency 'YFAds/YFAdsSDK'
-  #   ss.vendored_frameworks = 'SDK/YFAdsBDAdapter.framework'
-  # end
+   s.subspec 'YFAdsBDAdapter' do |ss|
+    ss.dependency 'BaiduMobAdSDK','5.332'
+    ss.dependency 'YFAds/YFAdsSDK'
+    ss.vendored_frameworks = 'SDK/YFAdsBDAdapter.framework'
+  end
 
   s.subspec 'YFAdsGDTAdapter' do |ss|
     ss.ios.deployment_target    = '11.0'
@@ -50,20 +50,20 @@ Pod::Spec.new do |s|
 
   end
 
-  # s.subspec 'YFAdsKSAdapter' do |ss|
-  #   ss.dependency 'KSAdSDK','3.3.61'
-  #   ss.dependency 'YFAds/YFAdsSDK'
-  #   ss.frameworks = ["Foundation", "UIKit", "MobileCoreServices", "CoreGraphics", "Security", "SystemConfiguration", "CoreTelephony", "AdSupport", "CoreData", "StoreKit", "AVFoundation", "MediaPlayer", "CoreMedia", "WebKit", "Accelerate", "CoreLocation", "AVKit", "MessageUI", "QuickLook", "AudioToolBox", "AddressBook"]
-  #   ss.libraries =  ["z", "resolv.9", "sqlite3", "c++", "c++abi"]
-  #   ss.vendored_frameworks = 'SDK/YFAdsKSAdapter.framework'
+  s.subspec 'YFAdsKSAdapter' do |ss|
+    ss.dependency 'KSAdSDK','3.3.61'
+    ss.dependency 'YFAds/YFAdsSDK'
+    ss.frameworks = ["Foundation", "UIKit", "MobileCoreServices", "CoreGraphics", "Security", "SystemConfiguration", "CoreTelephony", "AdSupport", "CoreData", "StoreKit", "AVFoundation", "MediaPlayer", "CoreMedia", "WebKit", "Accelerate", "CoreLocation", "AVKit", "MessageUI", "QuickLook", "AudioToolBox", "AddressBook"]
+    ss.libraries =  ["z", "resolv.9", "sqlite3", "c++", "c++abi"]
+    ss.vendored_frameworks = 'SDK/YFAdsKSAdapter.framework'
 
-  # end
+  end
 
-  # s.subspec 'YFAdsJDAdapter' do |ss|
-  #   ss.dependency 'JADYun'
-  #   ss.dependency 'YFAds/YFAdsSDK'
-  #   ss.vendored_frameworks = 'SDK/YFAdsJDAdapter.framework'
-  # end
+  s.subspec 'YFAdsJDAdapter' do |ss|
+    ss.dependency 'JADYun'
+    ss.dependency 'YFAds/YFAdsSDK'
+    ss.vendored_frameworks = 'SDK/YFAdsJDAdapter.framework'
+  end
 
 
  
